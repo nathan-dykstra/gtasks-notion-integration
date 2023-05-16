@@ -1,4 +1,3 @@
-
 # Environments
 .env
 .venv
@@ -9,7 +8,11 @@ env.bak/
 venv.bak/
 
 # Other
-__pycache__/
+.vscode/
+__pycache__
+roughWork.py
+setupDup.py
 
 # Credentials
-
+client_secret.json
+token.pkl

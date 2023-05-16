@@ -1,0 +1,5 @@
+notion-client
+google-api-python-client==1.7.2
+google-auth-oauthlib==0.4.1
+google-auth-httplib2
+pytz
