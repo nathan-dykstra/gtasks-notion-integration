@@ -42,12 +42,12 @@ maxDate = addTimeZoneForNotion(dateTimeToString(datetime.now() + timedelta(weeks
 minDate = addTimeZoneForNotion(dateTimeToString(datetime.now() - timedelta(weeks=PAST_WEEKS_TO_SYNC)))
 
 if PAST_WEEKS_TO_SYNC >=0 and FUTURE_WEEKS_TO_SYNC >= 0:
-    query['filter']['and'].append({'or': [{'property': NOTION_DATE, 'date': {'on_or_after': minDate}}, { 'property': NOTION_DATE, 'date': {'is_empty': True}}]})
-    query['filter']['and'].append({'or': [{'property': NOTION_DATE, 'date': {'on_or_before': maxDate}}, { 'property': NOTION_DATE, 'date': {'is_empty': True}}]})
+    query['filter']['and'].append({'or': [{'property': NOTION_DATE, 'date': {'on_or_after': minDate}}, { 'property': NOTION_STATUS, 'status': {'does_not_equal': 'Done'}}]})
+    query['filter']['and'].append({'or': [{'property': NOTION_DATE, 'date': {'on_or_before': maxDate}}, { 'property': NOTION_STATUS, 'status': {'does_not_equal': 'Done'}}]})
 elif PAST_WEEKS_TO_SYNC >=0:
-    query['filter']['and'].append({'or': [{'property': NOTION_DATE, 'date': {'on_or_after': minDate}}, { 'property': NOTION_DATE, 'date': {'is_empty': True}}]})
+    query['filter']['and'].append({'or': [{'property': NOTION_DATE, 'date': {'on_or_after': minDate}}, { 'property': NOTION_STATUS, 'status': {'does_not_equal': 'Done'}}]})
 elif FUTURE_WEEKS_TO_SYNC >= 0:
-    query['filter']['and'].append({'or': [{'property': NOTION_DATE, 'date': {'on_or_before': maxDate}}, { 'property': NOTION_DATE, 'date': {'is_empty': True}}]})
+    query['filter']['and'].append({'or': [{'property': NOTION_DATE, 'date': {'on_or_before': maxDate}}, { 'property': NOTION_STATUS, 'status': {'does_not_equal': 'Done'}}]})
 
 notionPages = notion.databases.query(
     **query
