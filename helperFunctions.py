@@ -340,7 +340,7 @@ def updateNotionTask(taskName, taskDate, taskDescription, notionList, notionPage
     #   1. No due date was specified in Notion
     #   2. The due date is a date object (Google Tasks API does not allow reading/writing the time part)
     if isinstance(taskDate, date):
-        updatedNotionTaskUpate = notion.pages.update(
+        updatedNotionTaskUpdate = notion.pages.update(
             **{
                 'page_id': updatedNotionTask['id'],
                 'properties': {
@@ -349,6 +349,17 @@ def updateNotionTask(taskName, taskDate, taskDescription, notionList, notionPage
                             'start': dateToString(taskDate),
                             'end': None
                         }
+                    }
+                }
+            }
+        )
+    else:
+        updatedNotionTaskUpdate = notion.pages.update(
+            **{
+                'page_id': updatedNotionTask['id'],
+                'properties': {
+                    NOTION_DATE: {
+                        'date': None
                     }
                 }
             }
