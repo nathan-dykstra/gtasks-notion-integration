@@ -22,7 +22,7 @@ I have built a Google Calendar integration as well available [here](https://gith
 - Run the program at scheduled intervals using tools like Windows Event Scheduler (instructions will be included in the setup documentation).
 
 ## Limitations
-- You will have to use my Notion tasks database template available [here](https://nathan-dykstra-personal.notion.site/578e5103911b42bb96809909f1de7325?v=8bcec2b2cf384b6bb256c7694fa052c5&pvs=73).
+- You will have to use my Notion tasks database template available [here](https://nathan-dykstra.notion.site/578e5103911b42bb96809909f1de7325?v=8bcec2b2cf384b6bb256c7694fa052c5&pvs=73).
 - Google API limitations means I can't sync the time part of a Notion task date to Google Tasks (i.e. only the date gets synced, not the date and time). Will attempt to fix this in the future if there is an API update.
 - The "Status" property syncs only To-do and Completed statuses because Google Tasks does not have intermediate stages (like in progress/on hold).
 - Does not sync the "Priority" or "Tags" properties from Notion to Google Tasks (these features are not available in Google Tasks)
